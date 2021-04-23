@@ -1,0 +1,352 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Outlook add in general tests" verbose="5" preserve-order="true" >
+
+	<!--<test name="Configuration window test"  >
+		<classes>
+			<class name="tests.TestEnvSetup"></class>
+
+&lt;!&ndash;			<class name="tests.OutlookConfigurationWindowTest">
+				<methods>
+					<include name="emptyCredential" />
+					<include name="wrongCredential" />
+					<include name="outolookAddinDisabledFromServer" />
+					<include name="correctCredential">
+						<parameter name="servername" value="rupshav21"/>
+						<parameter name="username" value="sarja1@nilavodev.com"/>
+						<parameter name="password" value="1As!#"/>
+						<parameter name="domain" value=""/>
+					</include>
+				</methods>
+			</class>&ndash;&gt;
+		</classes>
+	</test>-->
+
+
+	<test name="Send Secure email bypassPolicy= YES and mustSignin= YES">
+		<classes >
+			<class name="tests.TestEnvSetup"></class>
+			<class name="tests.SendingEmailTest" >
+					<methods>
+						<include name="sendNewSecureEmail">
+							<parameter name="sendThroughBiscom" value="Yes"/>
+							<parameter name="recipientMustSignIn" value="Yes"/>
+							<parameter name="sender" value="sarja1@nilavodev.com"/>
+							<parameter name="recipient" value="sarja2@nilavodev.com"/>
+							<parameter name="subject" value="Test Send Secure email bypassPolicy= YES and mustSignin= YES"/>
+							<parameter name="emailBodyMessage" value="secureMessage without rules 1"/>
+							<parameter name="emailNotificationMessage" value="notificationMessage"/>
+							<parameter name="passwordProtected" value="Yes"/>
+							<parameter name="password" value="1"/>
+							<parameter name="attachFileWithSFT" value="No"/>
+							<parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                            <parameter name="caseNumber" value="1"/>
+						</include>
+					</methods>
+				</class>
+		</classes>
+	</test>
+
+
+	<test name="Send Secure email bypassPolicy= YES and mustSignin= NO">
+		<classes >
+			<class name="tests.TestEnvSetup"></class>
+			<class name="tests.SendingEmailTest" >
+				<methods>
+					<include name="sendNewSecureEmail">
+						<parameter name="sendThroughBiscom" value="Yes"/>
+						<parameter name="recipientMustSignIn" value="No"/>
+						<parameter name="sender" value="sarja1@nilavodev.com"/>
+						<parameter name="recipient" value="sarja2@nilavodev.com"/>
+						<parameter name="subject" value="Test Send Secure email bypassPolicy= YES and mustSignin= NO"/>
+						<parameter name="emailBodyMessage" value="secureMessage without rules 2"/>
+						<parameter name="emailNotificationMessage" value="notificationMessage"/>
+						<parameter name="passwordProtected" value="No"/>
+						<parameter name="password" value="1"/>
+						<parameter name="attachFileWithSFT" value="No"/>
+						<parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                        <parameter name="caseNumber" value="2"/>
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Send Secure email bypassPolicy= Use policy and mustSignin= YES">
+		<classes >
+			<class name="tests.TestEnvSetup"></class>
+			<class name="tests.SendingEmailTest" >
+				<methods>
+					<include name="sendNewSecureEmail">
+						<parameter name="sendThroughBiscom" value="Use policy"/>
+						<parameter name="recipientMustSignIn" value="Yes"/>
+						<parameter name="sender" value="sarja1@nilavodev.com"/>
+						<parameter name="recipient" value="sarja2@nilavodev.com"/>
+						<parameter name="subject" value="Test Send Secure email bypassPolicy= Use policy and mustSignin= YES"/>
+						<parameter name="emailBodyMessage" value="secureMessage without rules 3"/>
+						<parameter name="emailNotificationMessage" value="notificationMessage"/>
+						<parameter name="passwordProtected" value="No"/>
+						<parameter name="password" value="1"/>
+						<parameter name="attachFileWithSFT" value="No"/>
+						<parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                        <parameter name="caseNumber" value="3"/>
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Send Secure email bypassPolicy= Use policy and mustSignin= NO">
+		<classes >
+			<class name="tests.TestEnvSetup"></class>
+			<class name="tests.SendingEmailTest" >
+				<methods>
+					<include name="sendNewSecureEmail">
+						<parameter name="sendThroughBiscom" value="Use policy"/>
+						<parameter name="recipientMustSignIn" value="No"/>
+						<parameter name="sender" value="sarja1@nilavodev.com"/>
+						<parameter name="recipient" value="sarja2@nilavodev.com"/>
+						<parameter name="subject" value="Test Send Secure email bypassPolicy= Use policy and mustSignin= NO"/>
+						<parameter name="emailBodyMessage" value="secureMessage without rules 4"/>
+						<parameter name="emailNotificationMessage" value="notificationMessage"/>
+						<parameter name="passwordProtected" value="No"/>
+						<parameter name="password" value="1"/>
+						<parameter name="attachFileWithSFT" value="No"/>
+						<parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                        <parameter name="caseNumber" value="4"/>
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<test name="Send Secure email bypassPolicy= NO and mustSignin= YES">
+		<classes >
+			<class name="tests.TestEnvSetup"></class>
+			<class name="tests.SendingEmailTest" >
+				<methods>
+					<include name="sendNewSecureEmail">
+						<parameter name="sendThroughBiscom" value="No"/>
+						<parameter name="recipientMustSignIn" value="Yes"/>
+						<parameter name="sender" value="sarja1@nilavodev.com"/>
+						<parameter name="recipient" value="sarja2@nilavodev.com"/>
+						<parameter name="subject" value="TestSend Secure email bypassPolicy= NO and mustSignin= YES"/>
+						<parameter name="emailBodyMessage" value="secureMessage without rules 5"/>
+						<parameter name="emailNotificationMessage" value="notificationMessage"/>
+						<parameter name="passwordProtected" value="No"/>
+						<parameter name="password" value="1"/>
+						<parameter name="attachFileWithSFT" value="No"/>
+						<parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                        <parameter name="caseNumber" value="5"/>
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Send Secure email bypassPolicy= NO and mustSignin= NO">
+		<classes >
+			<class name="tests.TestEnvSetup"></class>
+			<class name="tests.SendingEmailTest" >
+				<methods>
+					<include name="sendNewSecureEmail">
+						<parameter name="sendThroughBiscom" value="No"/>
+						<parameter name="recipientMustSignIn" value="No"/>
+						<parameter name="sender" value="sarja1@nilavodev.com"/>
+						<parameter name="recipient" value="sarja2@nilavodev.com"/>
+						<parameter name="subject" value="Test Send Secure email bypassPolicy= NO and mustSignin= NO"/>
+						<parameter name="emailBodyMessage" value="secureMessage without rules 6"/>
+						<parameter name="emailNotificationMessage" value="notificationMessage"/>
+						<parameter name="passwordProtected" value="No"/>
+						<parameter name="password" value="1"/>
+						<parameter name="attachFileWithSFT" value="No"/>
+						<parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                        <parameter name="caseNumber" value="6"/>
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+    <test name="Send normal email bypassPolicy= YES and mustSignin= YES">
+        <classes >
+            <class name="tests.TestEnvSetup"></class>
+            <class name="tests.SendingEmailTest" >
+                <methods>
+                    <include name="sendNewEmail">
+                        <parameter name="sendThroughBiscom" value="Yes"/>
+                        <parameter name="recipientMustSignIn" value="Yes"/>
+                        <parameter name="sender" value="sarja1@nilavodev.com"/>
+                        <parameter name="recipient" value="sarja2@nilavodev.com"/>
+                        <parameter name="subject" value="Test Send normal email bypassPolicy= YES and mustSignin= YES"/>
+                        <parameter name="emailBodyMessage" value="secureMessage without rules 1"/>
+                        <parameter name="emailNotificationMessage" value="notificationMessage"/>
+                        <parameter name="passwordProtected" value="No"/>
+                        <parameter name="password" value="1"/>
+                        <parameter name="attachFileWithSFT" value="No"/>
+                        <parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                        <parameter name="caseNumber" value="7"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Send normal email bypassPolicy= YES and mustSignin= NO">
+        <classes >
+            <class name="tests.TestEnvSetup"></class>
+            <class name="tests.SendingEmailTest" >
+                <methods>
+                    <include name="sendNewEmail">
+                        <parameter name="sendThroughBiscom" value="Yes"/>
+                        <parameter name="recipientMustSignIn" value="No"/>
+                        <parameter name="sender" value="sarja1@nilavodev.com"/>
+                        <parameter name="recipient" value="sarja2@nilavodev.com"/>
+                        <parameter name="subject" value="Test Send normal email bypassPolicy= YES and mustSignin= NO"/>
+                        <parameter name="emailBodyMessage" value="secureMessage without rules 2"/>
+                        <parameter name="emailNotificationMessage" value="notificationMessage"/>
+                        <parameter name="passwordProtected" value="No"/>
+                        <parameter name="password" value="1"/>
+                        <parameter name="attachFileWithSFT" value="No"/>
+                        <parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                        <parameter name="caseNumber" value="8"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Send normal email bypassPolicy= Use policy and mustSignin= YES">
+        <classes >
+            <class name="tests.TestEnvSetup"></class>
+            <class name="tests.SendingEmailTest" >
+                <methods>
+                    <include name="sendNewEmail">
+                        <parameter name="sendThroughBiscom" value="Use policy"/>
+                        <parameter name="recipientMustSignIn" value="Yes"/>
+                        <parameter name="sender" value="sarja1@nilavodev.com"/>
+                        <parameter name="recipient" value="sarja2@nilavodev.com"/>
+                        <parameter name="subject" value="Test Send normal email bypassPolicy= Use policy and mustSignin= YES"/>
+                        <parameter name="emailBodyMessage" value="secureMessage without rules 3"/>
+                        <parameter name="emailNotificationMessage" value="notificationMessage"/>
+                        <parameter name="passwordProtected" value="No"/>
+                        <parameter name="password" value="1"/>
+                        <parameter name="attachFileWithSFT" value="No"/>
+                        <parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                        <parameter name="caseNumber" value="9"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Send normal email bypassPolicy= Use policy and mustSignin= NO">
+        <classes >
+            <class name="tests.TestEnvSetup"></class>
+            <class name="tests.SendingEmailTest" >
+                <methods>
+                    <include name="sendNewEmail">
+                        <parameter name="sendThroughBiscom" value="Use policy"/>
+                        <parameter name="recipientMustSignIn" value="No"/>
+                        <parameter name="sender" value="sarja1@nilavodev.com"/>
+                        <parameter name="recipient" value="sarja2@nilavodev.com"/>
+                        <parameter name="subject" value="Test Send normal email bypassPolicy= Use policy and mustSignin= NO"/>
+                        <parameter name="emailBodyMessage" value="secureMessage without rules 4"/>
+                        <parameter name="emailNotificationMessage" value="notificationMessage"/>
+                        <parameter name="passwordProtected" value="No"/>
+                        <parameter name="password" value="1"/>
+                        <parameter name="attachFileWithSFT" value="No"/>
+                        <parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                        <parameter name="caseNumber" value="10"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Send normal email bypassPolicy= NO and mustSignin= YES">
+        <classes >
+            <class name="tests.TestEnvSetup"></class>
+            <class name="tests.SendingEmailTest" >
+                <methods>
+                    <include name="sendNewEmail">
+                        <parameter name="sendThroughBiscom" value="No"/>
+                        <parameter name="recipientMustSignIn" value="Yes"/>
+                        <parameter name="sender" value="sarja1@nilavodev.com"/>
+                        <parameter name="recipient" value="sarja2@nilavodev.com"/>
+                        <parameter name="subject" value="Test Send normal email bypassPolicy= NO and mustSignin= YES"/>
+                        <parameter name="emailBodyMessage" value="secureMessage without rules 5"/>
+                        <parameter name="emailNotificationMessage" value="notificationMessage"/>
+                        <parameter name="passwordProtected" value="No"/>
+                        <parameter name="password" value="1"/>
+                        <parameter name="attachFileWithSFT" value="No"/>
+                        <parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                        <parameter name="caseNumber" value="11"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Send normal email bypassPolicy= NO and mustSignin= NO">
+        <classes >
+            <class name="tests.TestEnvSetup"></class>
+            <class name="tests.SendingEmailTest" >
+                <methods>
+                    <include name="sendNewEmail">
+                        <parameter name="sendThroughBiscom" value="No"/>
+                        <parameter name="recipientMustSignIn" value="No"/>
+                        <parameter name="sender" value="sarja1@nilavodev.com"/>
+                        <parameter name="recipient" value="sarja2@nilavodev.com"/>
+                        <parameter name="subject" value="Test Send normal email bypassPolicy= NO and mustSignin= NO"/>
+                        <parameter name="emailBodyMessage" value="secureMessage without rules 6"/>
+                        <parameter name="emailNotificationMessage" value="notificationMessage"/>
+                        <parameter name="passwordProtected" value="No"/>
+                        <parameter name="password" value="1"/>
+                        <parameter name="attachFileWithSFT" value="No"/>
+                        <parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                        <parameter name="caseNumber" value="12"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Send normal email bypassPolicy= NO and mustSignin= YES arrach mail with SFT attachment">
+        <classes >
+            <class name="tests.TestEnvSetup"></class>
+            <class name="tests.SendingEmailTest" >
+                <methods>
+                    <include name="sendNewEmail">
+                        <parameter name="sendThroughBiscom" value="No"/>
+                        <parameter name="recipientMustSignIn" value="Yes"/>
+                        <parameter name="sender" value="sarja1@nilavodev.com"/>
+                        <parameter name="recipient" value="sarja2@nilavodev.com"/>
+                        <parameter name="subject" value="Test Send normal email bypassPolicy= NO and mustSignin= NO"/>
+                        <parameter name="emailBodyMessage" value="secureMessage without rules 6"/>
+                        <parameter name="emailNotificationMessage" value="notificationMessage"/>
+                        <parameter name="passwordProtected" value="No"/>
+                        <parameter name="password" value="1"/>
+                        <parameter name="attachFileWithSFT" value="Yes"/>
+                        <parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+                        <parameter name="caseNumber" value="13"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

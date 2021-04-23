@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [sarja]">
+  <test name="Configuration window test(failed)">
+    <classes>
+      <class name="tests.SendingEmailTest">
+        <methods>
+          <include name="sendNewSecureEmail" invocation-numbers="0">
+            <parameter name="emailNotificationMessage" value="notificationMessage"/>
+            <parameter name="sender" value="sarja1@nilavodev.com"/>
+            <parameter name="emailBodyMessage" value="secureMessage without rules"/>
+            <parameter name="subject" value="Test mail without rules"/>
+            <parameter name="recipient" value="sarja2@nilavodev.com"/>
+            <parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+          </include> <!-- sendNewSecureEmail -->
+          <include name="sendNewEmailWithRules" invocation-numbers="0">
+            <parameter name="emailNotificationMessage" value="notificationMessage"/>
+            <parameter name="sender" value="sarja1@nilavodev.com"/>
+            <parameter name="emailBodyMessage" value="secureMessage"/>
+            <parameter name="subject" value="Test mail 12"/>
+            <parameter name="recipient" value="sarja2@nilavodev.com"/>
+            <parameter name="uploadFileLocation" value="C:\Users\sarja\Desktop\FitNesse.png"/>
+          </include> <!-- sendNewEmailWithRules -->
+        </methods>
+      </class> <!-- tests.SendingEmailTest -->
+    </classes>
+  </test> <!-- Configuration window test(failed) -->
+</suite> <!-- Failed suite [sarja] -->
